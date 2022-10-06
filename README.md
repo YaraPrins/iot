@@ -25,7 +25,7 @@ The first thing I encountered was that there are indeed multiple versions when y
 
 ![image](https://user-images.githubusercontent.com/27287809/194360253-2961a816-d477-4cdf-abbb-8b74e4ae0910.png)
 
-Then, what I needed to do was making an account and a dashboard for Adafruit IO, through (the Adafruit IO website)[https://io.adafruit.com/].
+Then, what I needed to do was making an account and a dashboard for Adafruit IO, through [the Adafruit IO website](https://io.adafruit.com/).
 
 ## Connecting the board
 
