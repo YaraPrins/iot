@@ -1,3 +1,15 @@
+# Table of Content
+
+* [🍉 Adafruit IO](https://github.com/YaraPrins/iot#-adafruit-io)
+* [📔 Quickstart](https://github.com/YaraPrins/iot#-quickstart)
+  * [⚙ General Installation](https://github.com/YaraPrins/iot#-general-installation)
+  * [✔ Installing Adafruit IO](https://github.com/YaraPrins/iot#-installing-adafruit-io)
+* [🙋 My installation process](https://github.com/YaraPrins/iot#-my-installation-process)
+  * [💭 First thoughts](https://github.com/YaraPrins/iot#-first-thoughts)
+  * [💯 Starting the installation](https://github.com/YaraPrins/iot#-starting-the-installation)
+  * [🔌 Connecting the board](https://github.com/YaraPrins/iot#-connecting-the-board)
+  * [💾 Uploading the code](https://github.com/YaraPrins/iot#-uploading-the-code)
+
 # 🍉 Adafruit IO
 Adafruit IO is a library for Arduino, used with Internet of Things. With this library you can put sensordata online (with help of the MQTT protocol) in a "feed", where you can use your actuators through the web.
 
