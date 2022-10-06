@@ -56,6 +56,10 @@ This also turned the LED strip I had connected to the color of what I set the co
 
 I could easily edit the color with the color picker, everything went smoothly!
 
+![image](https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png)
+
+![image](https://user-images.githubusercontent.com/27287809/194368410-c5b7251a-a5ab-4e8a-a092-c58fc611382d.png)
+
 
 
 
