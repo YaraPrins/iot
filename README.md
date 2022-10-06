@@ -36,6 +36,26 @@ After I put this in, the software started loading something, but this took a ver
 
 ![image](https://user-images.githubusercontent.com/27287809/194363778-35f60e22-57d1-4182-8580-c1f1443206ec.png)
 
+After a few minutes, I was certain it got stuck, so I closed off Arduino and started it back up again which indeed solved the loading state.
+
+Then I also put in my WiFi name and WiFi password in the `config.h` tab, and I remembered that my board, the NodeMCU, does not work on a 5Ghz WiFi network, so I made sure I was on the 2.4Ghz one.
+I also changed something in the tab for `adafruit_14_Neopixel.ino`, my LED strip would not have been connected to `#define PIXEL_PIN 5`, but to `#define PIXEL_PIN D5`. So, I corrected that code and I continued the steps.
+
+## Uploading the code
+I first made sure everything was working alright, by first hitting the checkmark to verify my code and afterwards I uploaded it to my NodeMCU board.
+
+My code was uploaded, and I started up the Serial Monitor, and put it on 115200 baud. When I opened this up, I kept getting dots printed, which I do not understand why...
+
+![image](https://user-images.githubusercontent.com/27287809/194366731-4829c426-ca40-4de0-85c8-999f56688f31.png)
+
+This kept on going, and eventually I got why. My WiFi hotspot connection was turned off for some reason (I didn't think I put this off), so it couldn't connect. I turned my hotspot back on and it connected immediatly!
+
+![image](https://user-images.githubusercontent.com/27287809/194367331-174ec7d2-29da-4704-acb8-48d5f6d55070.png)
+
+This also turned the LED strip I had connected to the color of what I set the color picker to be on the Arduino IO website ( In my dashboard, the little settings icon on the top right, create new block, select color picker).
+
+I could easily edit the color with the color picker, everything went smoothly!
+
 
 
 
