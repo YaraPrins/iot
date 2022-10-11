@@ -38,7 +38,7 @@ This document is meant as a experiment and I will document every step I make and
 ### 💯 Starting the installation
 The first thing I encountered was that there are indeed multiple versions when you search for `Adafruit IO Arduino`, and was a bit confused. Then I remembered that for now, I need the 'Arduino IO Arduino' library (installed version 4.2.3), but appearantly I missed some dependencies that I did not have installed. So, of course I installed them too. This took a few seconds, but overall no problems.
 
-![image](https://user-images.githubusercontent.com/27287809/194360253-2961a816-d477-4cdf-abbb-8b74e4ae0910.png)
+<img src="https://user-images.githubusercontent.com/27287809/194360253-2961a816-d477-4cdf-abbb-8b74e4ae0910.png" width="500px"/>
 
 Then, what I needed to do was making an account and a dashboard for Adafruit IO, through [the Adafruit IO website](https://io.adafruit.com/).
 
@@ -49,7 +49,7 @@ These first few steps were relatively easy, just needed to put in some general i
 Then, in the Arduino software, I headed to `File -> Examples -> Adafruit IO Arduino -> adafruitio_14_neopixel`. This would open up a new Arduino file, and I put in my username and password in the `config.h` tab.
 After I put this in, the software started loading something, but this took a very long time. It seemed like it got stuck in a loading loop (see image below)...
 
-![image](https://user-images.githubusercontent.com/27287809/194363778-35f60e22-57d1-4182-8580-c1f1443206ec.png)
+<img src="https://user-images.githubusercontent.com/27287809/194363778-35f60e22-57d1-4182-8580-c1f1443206ec.png" width="500px"/>
 
 After a few minutes, I was certain it got stuck, so I closed off Arduino and started it back up again which indeed solved the loading state.
 
@@ -61,19 +61,19 @@ I first made sure everything was working alright, by first hitting the checkmark
 
 My code was uploaded, and I started up the Serial Monitor, and put it on 115200 baud. When I opened this up, I kept getting dots printed, which I do not understand why...
 
-![image](https://user-images.githubusercontent.com/27287809/194366731-4829c426-ca40-4de0-85c8-999f56688f31.png)
+<img src="https://user-images.githubusercontent.com/27287809/194366731-4829c426-ca40-4de0-85c8-999f56688f31.png" width="500px"/>
 
 This kept on going, and eventually I got why. My WiFi hotspot connection was turned off for some reason (I didn't think I put this off), so it couldn't connect. I turned my hotspot back on and it connected immediatly!
 
-![image](https://user-images.githubusercontent.com/27287809/194367331-174ec7d2-29da-4704-acb8-48d5f6d55070.png)
+<img src="https://user-images.githubusercontent.com/27287809/194367331-174ec7d2-29da-4704-acb8-48d5f6d55070.png" width="500px"/>
 
 This also turned the LED strip I had connected to the color of what I set the color picker to be on the Arduino IO website ( In my dashboard, the little settings icon on the top right, create new block, select color picker).
 
 I could easily edit the color with the color picker, everything went smoothly!
 
-![image](https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png)
+<img src="https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png" width="500px"/>
 
-![image](https://user-images.githubusercontent.com/27287809/194368410-c5b7251a-a5ab-4e8a-a092-c58fc611382d.png)
+<img src="https://user-images.githubusercontent.com/27287809/194368410-c5b7251a-a5ab-4e8a-a092-c58fc611382d.png" width="500px"/>
 
 
 
