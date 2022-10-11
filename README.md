@@ -1,6 +1,6 @@
 # Table of Content
 
-* [Assignment 1](https://github.com/YaraPrins/iot#assignment-1---arduino-nodemcu--adafruit-io-colorpicker)
+* [Manual 1](https://github.com/YaraPrins/iot#manual-1---arduino-nodemcu--adafruit-io-colorpicker)
   * [Adafruit IO](https://github.com/YaraPrins/iot#-adafruit-io)
   * [Quickstart](https://github.com/YaraPrins/iot#-quickstart)
     * [General Installation](https://github.com/YaraPrins/iot#-general-installation)
@@ -11,7 +11,7 @@
     * [Connecting the board](https://github.com/YaraPrins/iot#-connecting-the-board)
     * [Uploading the code](https://github.com/YaraPrins/iot#-uploading-the-code)
 
-# Assignment 1 - Arduino, NodeMCU & Adafruit IO Colorpicker
+# Manual 1 - Arduino, NodeMCU & Adafruit IO Colorpicker
 
 ## 🍉 Adafruit IO
 Adafruit IO is a library for Arduino, used with Internet of Things. With this library you can put sensordata online (with help of the MQTT protocol) in a "feed", where you can use your actuators through the web.
