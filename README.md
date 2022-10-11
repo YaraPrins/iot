@@ -3,13 +3,13 @@
 * [Assignment 1](https://github.com/YaraPrins/iot#assignment-1---arduino-nodemcu--adafruit-io-colorpicker)
   * [Adafruit IO](https://github.com/YaraPrins/iot#-adafruit-io)
   * [Quickstart](https://github.com/YaraPrins/iot#-quickstart)
-   * [General Installation](https://github.com/YaraPrins/iot#-general-installation)
-   * [Installing Adafruit IO](https://github.com/YaraPrins/iot#-installing-adafruit-io)
+    * [General Installation](https://github.com/YaraPrins/iot#-general-installation)
+    * [Installing Adafruit IO](https://github.com/YaraPrins/iot#-installing-adafruit-io)
   * [My installation process](https://github.com/YaraPrins/iot#-my-installation-process)
-   * [First thoughts](https://github.com/YaraPrins/iot#-first-thoughts)
-   * [Starting the installation](https://github.com/YaraPrins/iot#-starting-the-installation)
-   * [Connecting the board](https://github.com/YaraPrins/iot#-connecting-the-board)
-   * [Uploading the code](https://github.com/YaraPrins/iot#-uploading-the-code)
+    * [First thoughts](https://github.com/YaraPrins/iot#-first-thoughts)
+    * [Starting the installation](https://github.com/YaraPrins/iot#-starting-the-installation)
+    * [Connecting the board](https://github.com/YaraPrins/iot#-connecting-the-board)
+    * [Uploading the code](https://github.com/YaraPrins/iot#-uploading-the-code)
 
 # Assignment 1 - Arduino, NodeMCU & Adafruit IO Colorpicker
 
