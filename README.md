@@ -1,3 +1,5 @@
+<img src="https://user-images.githubusercontent.com/27287809/195136595-77a9259a-af05-48a4-87e1-e962b51951bc.jpg" width="100%" height="300px"/>
+
 # Welcome 👋
 
 This repository is meant as an overview, a journal and will serve its purpose for writing down assignments given to me by the class I'm following for my undergrad study.
