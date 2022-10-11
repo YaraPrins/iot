@@ -104,26 +104,66 @@ After writing this, I also changed the original lightBot code a bit, under the s
 ## 🙋 My installation process
 
 ### 💭 First thoughts
-Well, I think it's amazing that it is even possible to do things like this, connecting to WiFi and making changes in an app or something and that it will change the light, but I heard it's not that simple to set up. So, I'm curious if everything will go smooth or if I'll get stuck and annoyed a lot haha!
-This document is meant as a experiment and I will document every step I make and errors I encounter. 
+It wasn't that hard luckily to make it work with the build in LED light from my NodeMCU board, but it was relatively tricky to get it working with my LED strip. Although I did get it to work, I think if I have a bit more understanding of how C++ and Arduino works, I would have made faster and more progress than relatively simple code that I have used here.
 
-### 💯 Starting the installation
-The 
+### 🔌 Bot with LED strip
+After the Telegram Bot has been made, and I had it connected it to Arduino, I started by checking out the example code and tried to understand what they meant and wrote. It was pretty straight forward and soon I got what they wrote. I tested it on my phone with the Telegram app, but at first the bot wouldn't respond, it didn't turn the light on or off and didn't send out a message back...
 
-### 🔌 Connecting the board
+This was quite odd, because I was certain that I connected it correctly, so I tried again, pasted the token again, but yet with no success. Then I tried to use my actual WiFi instead of my mobile WiFi hotspot, and then it suddenly worked!
 
+### 💾 Writing the code
+First I only worked with the build in light from the board, and it eventually worked, but now I wanted to control my LED strip.
 
+When I made sure that my Telegram Bot worked with the initial commands, I started to change it around a bit by adding a third `else if` statement, stating that if the incoming text to the bot was `color to red`, it needed to put the color of the light to red.
 
-### 💾 Uploading the code
-I first made sure everything was working alright, by first hitting the checkmark to verify my code and afterwards I uploaded it to my NodeMCU board.
+Here is where it started to get really tricky. Because I wasn't sure how to connect my LED strip to this chatbot code. But, then I remembered that I have a library on my arduino called `Arduino NeoPixel`, which uses the LED strip. So, I opened up an example code from that, and added some of that code into my original lightBot code (see above for set up). After setting this up correctly, I also put this into my `void setup(){}` code
 
-My code was uploaded, and I started up the Serial Monitor, and put it on 115200 baud. When I opened this up, I kept getting dots printed, which I do not understand why...
+```
+  // These lines are specifically to support the Adafruit Trinket 5V 16 MHz.
+  // Any other board, you can remove this part (but no harm leaving it):
+  // #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
+    // clock_prescale_set(clock_div_1);
+  // #endif
+    // END of Trinket-specific code.
 
+    strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
+    strip.show();            // Turn OFF all pixels ASAP
+    strip.setBrightness(50); // Set BRIGHTNESS to about 1/5 (max = 255)
+```
 
+This makes sure to set up the LED strip once when you start up your code.
 
-I could easily edit the color with the color picker, everything went smoothly!
+Then, in my loop code, I put some code into my `if` statements, where I first of all put in (in my `if` statement for `CTBotMessageText == myBot.getNewMessage(msg)) {}`)
+```
+		if (msg.text.equalsIgnoreCase("LIGHT ON")) {              
+			strip.fill((255,255,255), 0, 0);                              
+			myBot.sendMessage(msg.sender.id, "Light is now ON");
+		}
+		}
+```
 
-<img src="https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png" width="500px"/>
+which worked, but the lights turned blue instead of my intended white.
+I also tried to add a 'turn color to red' `if` statement, but this wouldnt work for some reason. I did the same as above, but instead of `strip.fill((255,255,255), 0, 0)` (first the color, then the starting point and lastly how many lights to be affected), I put in `strip.fill((255,0,0), 0, 0)` for it to be filled in with red. But, this code didn't work. 
+
+Note: it did send a message afterwards that it turned to red, but the color of the LED strip turned off instead of to red.
+
+I couldn't understand why this was happening, and got really frustrated. After a bit of looking on the web, I tried this instead of `string.fill`:
+
+```
+if (msg.text.equalsIgnoreCase("LIGHT ON")) {
+      for (int i = 0; i<strip.numPixels(); i++) {
+          strip.setPixelColor(i, 50, 50, 50);
+      }              // if the received message is "LIGHT ON"..
+      strip.show();                                // turn on the LED (inverted logic!)
+			myBot.sendMessage(msg.sender.id, "Light is now ON");  // notify the sender
+		}
+```
+
+So instead of the fill property, I used `setPixelColor`, with a `for` statement with an `int i` to say i is the number of the pixel on the ledstrip. In this piece of code above I'm stating that as long as i is below the total number of pixels on the strip, increase the i, and run this next code.
+
+With this change, my code did work! And also in the correct colors! As last part of this journey I also added an `if` statement for the colors green and blue, and these worked perfectly fine!
+
+// <img src="https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png" width="500px"/>
 
 
 
