@@ -13,21 +13,45 @@
 
 # Manual 2 - Arduino, NodeMCU & Telegram
 
-## 🍉 Telegram
-Telegram
+## 📱 Telegram
+Telegram is a globally accessible freemium, cross-platform, cloud-based instant messaging (IM) service. The service also provides optional end-to-end encrypted chats and video calling, VoIP, file sharing and several other features. (- [Wikipedia](https://en.wikipedia.org/wiki/Telegram_(software)))
 
 ## 📔 Quickstart
 
 ### ⚙ General Installation
-To use Adafruit IO, you need to have done a couple of things.
+To get started, you need to have done a couple of things.
 
 1. You need to have Arduino installed, and connected to a board that can send out and receive WiFi. (i.e. NodeMCU, which I will be using today).
 2. Your board should be correctly installed and adapted to the Arduino software.
 3. You need to have a working internet connection.
-4. You need to have some device or piece that is considered 'smart', for example a Philips Hue lightbulb, or a LED strip connected to the NodeMCU board.
+4. You need to have a Telegram account
+5. I'm using a LED strip today to control the colors, but you can also just make a chatbot or something like that
 
 ### ✔ Telegram Bot
-From there
+From there you need to follow a couple of steps to get started before you get to coding.
+
+#### BotFather
+
+1. We're now first off all going to set up your bot in Telegram. So, make sure you have a Telegram account, and either access through Telegram Web or through the IOS/Android App. 
+2. When you're logged in, go to the searchbar at the top of the screen and tpye in "BotFather".
+3. Select the BotFather user and tap the start button at the bottom of the screen, or write `/start` in the chat.
+4. After the welcoming message, type in `/newbot`, to create a new bot for your own.
+5. BotFather will ask you to come up with a name. Fill in your prevered name and continue.
+6. Then you need to choose a username for your bot, ending with "bot" or "_bot". It can take a bit because some are already taken (in that case you will get notified by BotFather).
+7. When you're finished up with the name and username, BotFather will generate a token for you. Note or copy the token, it will be used in the code! (also make sure to never upload the token to GitHub or something, for privacy reasons of course).
+8. Tap the start button at the bottom of the screen (I did this on IOS / Android app, I couldn't get it to work on my desktop).
+
+#### Arduino Libraries
+
+Now we have made our Telegram Bot, but before we can do anything with it on Arduino, we need to install a couple of Arduino Libraries to make sure the code runs smoothly.
+
+The libraries you need to have installed:
+
+- ArduinoJSON by Benoit Blanchon (version 5.13.5 , v6 is still in beta and not yet compatible with Telegram)
+- CTBot by Stefano Ledda
+
+and in my case because I am working with Adafruit Neopixel for my LED strip
+- Adafruit NeoPixel by Adafruit
 
 ## 🙋 My installation process
 
