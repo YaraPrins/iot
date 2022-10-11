@@ -10,10 +10,10 @@
   	* [Connecting your Telegram bot to Arduino](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#connecting-your-telegram-bot-to-arduino)
   		* [The Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#the-code)
   		* [Setting Up](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#setting-up)
-  	* [My Installation Process](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-my-installation-process)
-  		* [First Thoughts](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-first-thoughts)
-  		* [Bot with LED strip](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-bot-with-led-strip)
-  		* [Writing the Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-writing-the-code)
+  * [My Installation Process](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-my-installation-process)
+  	* [First Thoughts](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-first-thoughts)
+  	* [Bot with LED strip](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-bot-with-led-strip)
+  	* [Writing the Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-writing-the-code)
 
 # Manual 2 - Arduino, NodeMCU & Telegram
 
