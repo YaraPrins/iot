@@ -14,3 +14,5 @@ The README's are meant as some sort of manual, on how to do certain things (in M
 I hope you'll learn somethings from my experiences, and have a good day (or night, depending when you're reading this)!
 
 -- Yara
+
+<img src="https://user-images.githubusercontent.com/27287809/195138655-e1d25ea1-71a7-4f05-ae3a-68bcf20502d4.png" width="100%" height="200px"/>
