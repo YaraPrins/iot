@@ -41,6 +41,15 @@ From there you need to follow a couple of steps to get started before you get to
 
 #### 🤖 BotFather
 
+> The steps I followed come from 2 sources:
+> 
+> Source 1 |
+> https://www.instructables.com/Telegram-Bot-With-NodeMCU-ESP8266/
+>
+> Source 2 |
+> https://www.electroniclinic.com/botfather-telegram-with-esp8266-to-control-an-led/
+>
+
 1. We're now first off all going to set up your bot in Telegram. So, make sure you have a Telegram account, and either access through Telegram Web or through the IOS/Android App. 
 2. When you're logged in, go to the searchbar at the top of the screen and tpye in "BotFather".
 3. Select the BotFather user and tap the start button at the bottom of the screen, or write `/start` in the chat.
