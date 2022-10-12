@@ -39,8 +39,6 @@ To then select that board and the port you are using, go to Tools > Board `NodeM
 ### ✔ Telegram Bot
 From there you need to follow a couple of steps to get started before you get to coding.
 
-#### 🤖 BotFather
-
 > The steps I followed come from 2 sources:
 > 
 > Source 1 |
@@ -49,6 +47,8 @@ From there you need to follow a couple of steps to get started before you get to
 > Source 2 |
 > https://www.electroniclinic.com/botfather-telegram-with-esp8266-to-control-an-led/
 >
+
+#### 🤖 BotFather
 
 1. We're now first off all going to set up your bot in Telegram. So, make sure you have a Telegram account, and either access through Telegram Web or through the IOS/Android App. 
 2. When you're logged in, go to the searchbar at the top of the screen and tpye in "BotFather".
