@@ -1,3 +1,5 @@
+Written by Yara Prins | 06 oct 2022
+
 # Table of Content
 
 * [Manual 2 - Arduino, NodeMCU & Telegram](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#manual-2---arduino-nodemcu--telegram)
