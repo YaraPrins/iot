@@ -8,14 +8,14 @@ Written by Yara Prins | 06 oct 2022
   	* [⚙ General Installation](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-general-installation)
   	* [✔ Telegram Bot](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-telegram-bot)
   		* [🤖 BotFather](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#botfather)
-  		* [Arduino Libraries](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#arduino-libraries)
-  	* [Connecting your Telegram bot to Arduino](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#connecting-your-telegram-bot-to-arduino)
-  		* [The Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#the-code)
-  		* [Setting Up](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#setting-up)
+  		* [🏫 Arduino Libraries](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#arduino-libraries)
+  	* [🔌 Connecting your Telegram bot to Arduino](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#connecting-your-telegram-bot-to-arduino)
+  		* [💾 The Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#the-code)
+  		* [💻 Setting Up](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#setting-up)
   * [🙋 My Installation Process](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-my-installation-process)
   	* [💭 First Thoughts](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-first-thoughts)
   	* [🔌 Bot with LED strip](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-bot-with-led-strip)
-  	* [💾 Writing the Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-writing-the-code)
+  	* [👨‍💻 Writing the Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-writing-the-code)
 
 # Manual 2 - Arduino, NodeMCU & Telegram
 
@@ -50,7 +50,7 @@ From there you need to follow a couple of steps to get started before you get to
 7. When you're finished up with the name and username, BotFather will generate a token for you. Note or copy the token, it will be used in the code! (also make sure to never upload the token to GitHub or something, for privacy reasons of course).
 8. Tap the start button at the bottom of the screen (I did this on IOS / Android app, I couldn't get it to work on my desktop).
 
-#### Arduino Libraries
+#### 🏫 Arduino Libraries
 
 Now we have made our Telegram Bot, but before we can do anything with it on Arduino, we need to install a couple of Arduino Libraries to make sure the code runs smoothly.
 
@@ -63,13 +63,13 @@ and in my case because I am working with Adafruit Neopixel for my LED strip
 - Adafruit NeoPixel by Adafruit
 
 
-## Connecting your Telegram Bot to Arduino
+## 🔌 Connecting your Telegram Bot to Arduino
 
-### The Code
+### 💾 The Code
 
 We will use one of the example codes from the CTBot library called `lightBot`. Go to File > Examples > CTBOT > lightBot, and select it. This will open up a new window.
 
-### Setting Up
+### 💻 Setting Up
 In the string `ssid` you need to fill in your WiFi network name, and in the string `pass` please fill in your WiFi password (don't worry, as long as you dont upload your code online, no one can hack your WiFi ;) ). Then, next up is the string `token`, please paste your Telegram Bot token you received earlier.
 
 After filling in your general info that is needed, I will in my case also be declaring some extra things in this code. I am using a LED strip and the library Adafruit Neopixel to control the lights of my LED with the Telegram bot. So, on the top of my code, just beneath the 
@@ -117,7 +117,7 @@ After the Telegram Bot has been made, and I had it connected it to Arduino, I st
 
 This was quite odd, because I was certain that I connected it correctly, so I tried again, pasted the token again, but yet with no success. Then I tried to use my actual WiFi instead of my mobile WiFi hotspot, and then it suddenly worked!
 
-### 💾 Writing the code
+### 👨‍💻 Writing the code
 First I only worked with the build in light from the board, and it eventually worked, but now I wanted to control my LED strip.
 
 When I made sure that my Telegram Bot worked with the initial commands, I started to change it around a bit by adding a third `else if` statement, stating that if the incoming text to the bot was `color to red`, it needed to put the color of the light to red.
@@ -174,8 +174,5 @@ With this change, my code did work! And also in the correct colors! As last part
 
 
 NOTES FEEDBACK MANUAL:
-
-- Put in name
-- Put in date
 - Put in more error through comments / screenshots
 
