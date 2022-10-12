@@ -171,5 +171,9 @@ With this change, my code did work! And also in the correct colors! As last part
 
 
 
+NOTES FEEDBACK MANUAL:
 
+- Put in name
+- Put in date
+- Put in more error through comments / screenshots
 
