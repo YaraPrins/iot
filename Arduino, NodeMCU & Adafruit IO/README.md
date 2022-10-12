@@ -1,3 +1,6 @@
+Written by Yara Prins
+06 oct 2022
+
 # Table of Content
 
 * [Manual 1](https://github.com/YaraPrins/iot#manual-1---arduino-nodemcu--adafruit-io-colorpicker)
