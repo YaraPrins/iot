@@ -186,6 +186,13 @@ if (msg.text.equalsIgnoreCase("LIGHT ON")) {
 
 So instead of the fill property, I used `setPixelColor`, with a `for` statement with an `int i` to say i is the number of the pixel on the ledstrip. In this piece of code above I'm stating that as long as i is below the total number of pixels on the strip, increase the i, and run this next code.
 
+>
+> Sources
+> https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html#a310844b3e5580056edf52ce3268d8084
+> &
+> https://www.partsnotincluded.com/getting-started-with-the-adafruit-neopixels-library/
+> 
+
 With this change, my code did work! And also in the correct colors! As last part of this journey I also added an `if` statement for the colors green and blue, and these worked perfectly fine!
 
 <!-- <img src="https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png" width="500px"/> -->
