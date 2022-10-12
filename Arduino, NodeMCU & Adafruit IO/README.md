@@ -1,5 +1,4 @@
-Written by Yara Prins
-06 oct 2022
+Written by Yara Prins | 06 oct 2022
 
 # Table of Content
 
