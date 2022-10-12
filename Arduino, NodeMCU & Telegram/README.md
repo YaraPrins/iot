@@ -71,6 +71,16 @@ The libraries you need to have installed:
 and in my case because I am working with Adafruit Neopixel for my LED strip
 - Adafruit NeoPixel by Adafruit
 
+> To learn more about the Adafruit NeoPixel library, I would recommend checking out these sources
+> 
+> [learn.adafruit.com](https://learn.adafruit.com/adafruit-neopixel-uberguide/the-magic-of-neopixels),
+> [adafruit.github.io](https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html#a310844b3e5580056edf52ce3268d8084),
+> & [partsnotincluded.com](https://www.partsnotincluded.com/getting-started-with-the-adafruit-neopixels-library/)
+> 
+
+
+
+
 
 ## 🔌 Connecting your Telegram Bot to Arduino
 
