@@ -3,9 +3,9 @@
 * [Manual 2 - Arduino, NodeMCU & Telegram](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#manual-2---arduino-nodemcu--telegram)
   * [📱 Telegram](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-telegram)
   * [📔 Quickstart](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-quickstart)
-  	* [✔ General Installation](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-general-installation)
-  	* [Telegram Bot](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-telegram-bot)
-  		* [BotFather](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#botfather)
+  	* [⚙ General Installation](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-general-installation)
+  	* [✔ Telegram Bot](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#-telegram-bot)
+  		* [🤖 BotFather](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#botfather)
   		* [Arduino Libraries](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#arduino-libraries)
   	* [Connecting your Telegram bot to Arduino](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#connecting-your-telegram-bot-to-arduino)
   		* [The Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#the-code)
@@ -37,7 +37,7 @@ To then select that board and the port you are using, go to Tools > Board `NodeM
 ### ✔ Telegram Bot
 From there you need to follow a couple of steps to get started before you get to coding.
 
-#### BotFather
+#### 🤖 BotFather
 
 1. We're now first off all going to set up your bot in Telegram. So, make sure you have a Telegram account, and either access through Telegram Web or through the IOS/Android App. 
 2. When you're logged in, go to the searchbar at the top of the screen and tpye in "BotFather".
