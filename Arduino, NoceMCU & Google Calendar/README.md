@@ -9,7 +9,9 @@ Written by Yara Prins | 26 oct 2022
   	 * [🏫 Arduino Libraries]()
   	 * [✔ Google Calendar events]() 	
   * [💾 The Code]()
-    * [💻 Setting Up]() 
+    * [💻 Setting Up]()
+  * [🙋 My installation process]() 
+    * [🔌 Trial and Error]()
 
 
 
