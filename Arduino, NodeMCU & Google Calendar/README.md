@@ -2,16 +2,17 @@ Written by Yara Prins | 26 oct 2022
 
 # Table of Content
 
-* [Manual 3 - Arduino, NodeMCU & Google Calendar](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#manual-2---arduino-nodemcu--telegram)
-  * [📱 What are we going to do?]()
-  * [📔 Quickstart]()
-  	 * [⚙ General Installation]()
-  	 * [🏫 Arduino Libraries]()
-  	 * [✔ Google Calendar events]() 	
-  * [💾 The Code]()
-    * [💻 Setting Up]()
-  * [🙋 My installation process]() 
-    * [🔌 Trial and Error]()
+* [Manual 3 - Arduino, NodeMCU & Google Calendar](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#manual-3---arduino-nodemcu--google-calendar)
+  * [📱 What are we going to do?](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-what-are-we-going-to-do)
+  * [📔 Quickstart](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-quickstart)
+  	 * [⚙ General Installation](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-general-installation)
+  	 * [🏫 Arduino Libraries](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-arduino-libraries)
+  	 * [✔ Google Calendar events](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-google-calendar-events) 	
+  * [💾 The Code](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-the-code)
+    * [💻 Setting Up](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-setting-up)
+  * [🙋 My installation process](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-my-installation-process) 
+    * [💭 First thoughts](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-first-thoughts)
+    * [🔌 Trial and Error](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Google%20Calendar#-trial-and-error)
 
 
 
@@ -143,26 +144,27 @@ It wasn't that hard luckily to connect Zappier to my Adafruit IO feed and my Goo
 
 First of all, I made some silly mistakes that I quickly solved. 
 
-![1](https://user-images.githubusercontent.com/27287809/198257952-e83b749e-0b9a-450f-a5f8-b65ce1f04d85.png)
+<img src="https://user-images.githubusercontent.com/27287809/198257952-e83b749e-0b9a-450f-a5f8-b65ce1f04d85.png" width="600"/>
 
+>
 > Not selecting the board and port in my Arduino IDE software
+>
 
+<img src="https://user-images.githubusercontent.com/27287809/198258135-f8e3bb3e-efbc-46ae-a253-a2510814721c.png" width="600"/>
 
-
-![2](https://user-images.githubusercontent.com/27287809/198258135-f8e3bb3e-efbc-46ae-a253-a2510814721c.png)
-
+>
 > Trying to connect with my WiFi but realizing I had not changed the WiFi (was at a different place). After that, connection did work.
-
+>
 
 After those kind of silly mistakes, I tried to see if my code and the connection was working, so I did some testing with Zappier and made a few testing events on my own Google Calendar. This worked perfectly! The example code had a certain way to read out the values, which worked, but I wanted to do things a little different.
 
-![WhatsApp Image 2022-10-27 at 12 17 08](https://user-images.githubusercontent.com/27287809/198259091-fa478acd-accb-491d-b488-1be5b0c3c681.jpeg)
-![3](https://user-images.githubusercontent.com/27287809/198259288-c1aa84a3-d6f3-451c-aff7-1e5797c1518e.png)
-![4](https://user-images.githubusercontent.com/27287809/198259315-2abef3cc-2863-4997-a8c6-e74322cb3caa.png)
+<img src="https://user-images.githubusercontent.com/27287809/198259091-fa478acd-accb-491d-b488-1be5b0c3c681.jpeg" width="300" align="right"/>
+<img src="https://user-images.githubusercontent.com/27287809/198259288-c1aa84a3-d6f3-451c-aff7-1e5797c1518e.png" width="600"/>
+<img src="https://user-images.githubusercontent.com/27287809/198259315-2abef3cc-2863-4997-a8c6-e74322cb3caa.png" width="600"/>
 
 After I managed to get the data using the example file, I wanted to customize the code a bit. So, I started off with adding some other values in the Zappier action fields, but apparently this did not work with the original example code.
 
-![5](https://user-images.githubusercontent.com/27287809/198259586-13ea56aa-f6ef-4021-b86e-20f7bee112c3.png)
+<img src="https://user-images.githubusercontent.com/27287809/198259586-13ea56aa-f6ef-4021-b86e-20f7bee112c3.png" width="600"/>
 
 It messed up the whole structure that was created, but that came from this piece of code:
 
@@ -228,14 +230,13 @@ This made sure to get the value data, but because it was all in one long string,
 
 I did not like this, so I tried something different. I added multiple actions for my Zappier trigger, each action with a different Google Calendar value (one event start (pretty), the other event end (pretty), and also the duration, and the event description (name)).
 
-![10](https://user-images.githubusercontent.com/27287809/198261077-972e6559-5e43-4281-b366-acb2f29d9314.png)
+<img src="https://user-images.githubusercontent.com/27287809/198261077-972e6559-5e43-4281-b366-acb2f29d9314.png" width="600"/>
 
 After I put that in, I tried to see if I could read out the data, but this was very difficult to do. Because I was not very familiar with the documentation of Adafruit IO and how that would work with reading out Feed data and such, I struggled a lot with the right way to collect my data. I tried a couple of ways to `Serial.println();` the incomming data values, but I kept getting the wrong values, or it didn't work at all.
 
-
-![9](https://user-images.githubusercontent.com/27287809/198260756-f3a2a96f-2c92-4e72-9753-49591f3fe7a4.png)
-![image](https://user-images.githubusercontent.com/27287809/198261194-2b83b919-4d60-46e3-af8d-e7434f73da42.png)
-![image](https://user-images.githubusercontent.com/27287809/198261253-293d64b9-8dde-43f6-a9b6-b9b1047735f7.png)
+<img src="https://user-images.githubusercontent.com/27287809/198260756-f3a2a96f-2c92-4e72-9753-49591f3fe7a4.png" width="600"/>
+<img src="https://user-images.githubusercontent.com/27287809/198261194-2b83b919-4d60-46e3-af8d-e7434f73da42.png" width="600"/>
+<img src="https://user-images.githubusercontent.com/27287809/198261253-293d64b9-8dde-43f6-a9b6-b9b1047735f7.png" width="600"/>
 
 This eventually worked, by putting in this:
 
