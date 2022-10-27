@@ -3,19 +3,15 @@ Written by Yara Prins | 26 oct 2022
 # Table of Content
 
 * [Manual 3 - Arduino, NodeMCU & Google Calendar](https://github.com/YaraPrins/iot/tree/main/Arduino%2C%20NodeMCU%20%26%20Telegram#manual-2---arduino-nodemcu--telegram)
-  * [📱 Telegram]()
+  * [📱 What are we going to do?]()
   * [📔 Quickstart]()
-  	* [⚙ General Installation]()
-  	* [✔ Telegram Bot]()
-  		* [🤖 BotFather]()
-  		* [🏫 Arduino Libraries]()
-  	* [🔌 Connecting your Telegram bot to Arduino]()
-  		* [💾 The Code]()
-  		* [💻 Setting Up]()
-  * [🙋 My Installation Process]()
-  	* [💭 First Thoughts]()
-  	* [🔌 Bot with LED strip]()
-  	* [👨‍💻 Writing the Code]()
+  	 * [⚙ General Installation]()
+  	 * [🏫 Arduino Libraries]()
+  	 * [✔ Google Calendar events]() 	
+  * [💾 The Code]()
+    * [💻 Setting Up]() 
+
+
 
 # Manual 3 - Arduino, NodeMCU & Google Calendar
 
