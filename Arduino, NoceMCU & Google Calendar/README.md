@@ -134,77 +134,122 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 
 This part of the code is based off on the example code `strandtest` from the library Adafruit Neopixel, with slight changes (my LED_PIN is D5 instead of 6, because my ledstrip is connected to the pin D5, and my LED_COUNT is 15, the amount of LEDs I have on my LED strip).
 
-After writing this, I also changed the original lightBot code a bit, under the strings for your WiFi and Telegram Token, instead of `uint8_t led = 2` or `uint8_t led = BUILTIN_LED`, I made sure to connect it with my LED strip by putting `uint8_t led = LED_PIN`, so basically that means that my `uint8_led` is connected to pin D5 of my NodeMCU board.
-
 
 ## 🙋 My installation process
 
 ### 💭 First thoughts
-It wasn't that hard luckily to make it work with the build in LED light from my NodeMCU board, but it was relatively tricky to get it working with my LED strip. Although I did get it to work, I think if I have a bit more understanding of how C++ and Arduino works, I would have made faster and more progress than relatively simple code that I have used here.
+It wasn't that hard luckily to connect Zappier to my Adafruit IO feed and my Google Calendar, but it was very hard to read out the data values from the different actions set up in Zappier, which I wanted to use in my code.
 
-### 🔌 Bot with LED strip
-After the Telegram Bot has been made, and I had it connected it to Arduino, I started by checking out the example code and tried to understand what they meant and wrote. It was pretty straight forward and soon I got what they wrote. I tested it on my phone with the Telegram app, but at first the bot wouldn't respond, it didn't turn the light on or off and didn't send out a message back...
 
-This was quite odd, because I was certain that I connected it correctly, so I tried again, pasted the token again, but yet with no success. Then I tried to use my actual WiFi instead of my mobile WiFi hotspot, and then it suddenly worked!
+### 🔌 Trial and Error
 
-### 👨‍💻 Writing the code
-First I only worked with the build in light from the board, and it eventually worked, but now I wanted to control my LED strip.
+First of all, I made some silly mistakes that I quickly solved. 
 
-When I made sure that my Telegram Bot worked with the initial commands, I started to change it around a bit by adding a third `else if` statement, stating that if the incoming text to the bot was `color to red`, it needed to put the color of the light to red.
+![1](https://user-images.githubusercontent.com/27287809/198257952-e83b749e-0b9a-450f-a5f8-b65ce1f04d85.png)
 
-Here is where it started to get really tricky. Because I wasn't sure how to connect my LED strip to this chatbot code. But, then I remembered that I have a library on my arduino called `Arduino NeoPixel`, which uses the LED strip. So, I opened up an example code from that, and added some of that code into my original lightBot code (see above for set up). After setting this up correctly, I also put this into my `void setup(){}` code
+> Not selecting the board and port in my Arduino IDE software
 
-```
-  // These lines are specifically to support the Adafruit Trinket 5V 16 MHz.
-  // Any other board, you can remove this part (but no harm leaving it):
-  // #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
-    // clock_prescale_set(clock_div_1);
-  // #endif
-    // END of Trinket-specific code.
 
-    strip.begin();           // INITIALIZE NeoPixel strip object (REQUIRED)
-    strip.show();            // Turn OFF all pixels ASAP
-    strip.setBrightness(50); // Set BRIGHTNESS to about 1/5 (max = 255)
-```
 
-This makes sure to set up the LED strip once when you start up your code.
+![2](https://user-images.githubusercontent.com/27287809/198258135-f8e3bb3e-efbc-46ae-a253-a2510814721c.png)
 
-Then, in my loop code, I put some code into my `if` statements, where I first of all put in (in my `if` statement for `CTBotMessageText == myBot.getNewMessage(msg)) {}`)
-```
-		if (msg.text.equalsIgnoreCase("LIGHT ON")) {              
-			strip.fill((255,255,255), 0, 0);                              
-			myBot.sendMessage(msg.sender.id, "Light is now ON");
-		}
-		}
-```
+> Trying to connect with my WiFi but realizing I had not changed the WiFi (was at a different place). After that, connection did work.
 
-which worked, but the lights turned blue instead of my intended white.
-I also tried to add a 'turn color to red' `if` statement, but this wouldnt work for some reason. I did the same as above, but instead of `strip.fill((255,255,255), 0, 0)` (first the color, then the starting point and lastly how many lights to be affected), I put in `strip.fill((255,0,0), 0, 0)` for it to be filled in with red. But, this code didn't work. 
 
-Note: it did send a message afterwards that it turned to red, but the color of the LED strip turned off instead of to red.
+After those kind of silly mistakes, I tried to see if my code and the connection was working, so I did some testing with Zappier and made a few testing events on my own Google Calendar. This worked perfectly! The example code had a certain way to read out the values, which worked, but I wanted to do things a little different.
 
-I couldn't understand why this was happening, and got really frustrated. After a bit of looking on the web, I tried this instead of `string.fill`:
+![WhatsApp Image 2022-10-27 at 12 17 08](https://user-images.githubusercontent.com/27287809/198259091-fa478acd-accb-491d-b488-1be5b0c3c681.jpeg)
+![3](https://user-images.githubusercontent.com/27287809/198259288-c1aa84a3-d6f3-451c-aff7-1e5797c1518e.png)
+![4](https://user-images.githubusercontent.com/27287809/198259315-2abef3cc-2863-4997-a8c6-e74322cb3caa.png)
+
+After I managed to get the data using the example file, I wanted to customize the code a bit. So, I started off with adding some other values in the Zappier action fields, but apparently this did not work with the original example code.
+
+![5](https://user-images.githubusercontent.com/27287809/198259586-13ea56aa-f6ef-4021-b86e-20f7bee112c3.png)
+
+It messed up the whole structure that was created, but that came from this piece of code:
 
 ```
-if (msg.text.equalsIgnoreCase("LIGHT ON")) {
-      for (int i = 0; i<strip.numPixels(); i++) {
-          strip.setPixelColor(i, 50, 50, 50);
-      }              // if the received message is "LIGHT ON"..
-      strip.show();                                // turn on the LED (inverted logic!)
-			myBot.sendMessage(msg.sender.id, "Light is now ON");  // notify the sender
-		}
+
+    // Turn the feed message into a string
+ String answer = data;
+ Serial.println(answer);
+ Serial.println("Raw answer " + answer);
+ 
+//  Turn the string into usable data
+   date
+   String date = answer.substring(0,10);
+   //starting time
+   String startHourString = answer.substring(11,13);
+   int startHour = startHourString.toInt();
+ 
+   String startMinuteString = answer.substring(14,16);
+   int startMinute = startMinuteString.toInt();
+
+   //ending time
+   String endHourString = answer.substring(36,38);
+   int endHour = endHourString.toInt();
+  
+   String endMinuteString = answer.substring(39,41);
+   int endMinute = endMinuteString.toInt();
+
+   String nameEvent = answer.substring(50);
+  
+  
+//  Print results in serial monitor
+ Serial.println("Raw asnwer " + answer);
+
+ Serial.println("");
+ Serial.println(nameEvent);
+ Serial.println("***********************");
+ Serial.println("Training on " + date );
+ Serial.println("***********************");
+ Serial.println("Training starts at " + startHourString + ":" + startMinuteString);
+ Serial.println("Training ends at " + endHourString + ":" + endMinuteString);
+  
+
+
+//  You can use the data to calculate all sorts of things
+  
+ Calculate duration (doesn't work at midnight)
+ int startTime = startHour*60 + startMinute; //starting time in minutes of the day
+ int endTime = endHour*60 + endMinute; //ending time in minutes of the day
+ int durationTotal = endTime - startTime; //duration in minutes
+ int durationHours = durationTotal/60; //duration whole hours
+ int durationMin = durationTotal%60; // rest of duration in minutes
+ Serial.print("Training lasts ");
+ Serial.print(durationHours);
+ Serial.print(" hours and ");
+ Serial.print(durationMin);
+ Serial.println(" minutes");
+
+}
+
 ```
 
-So instead of the fill property, I used `setPixelColor`, with a `for` statement with an `int i` to say i is the number of the pixel on the ledstrip. In this piece of code above I'm stating that as long as i is below the total number of pixels on the strip, increase the i, and run this next code.
+This made sure to get the value data, but because it was all in one long string, it needed to be seperated into pieces and needed the declarations from where to where it needed to be cut. This also meant that I could not use the 'pretty' format, because that would have messed up the order as well.
 
->
-> Sources
-> https://adafruit.github.io/Adafruit_NeoPixel/html/class_adafruit___neo_pixel.html#a310844b3e5580056edf52ce3268d8084
-> &
-> https://www.partsnotincluded.com/getting-started-with-the-adafruit-neopixels-library/
-> 
+I did not like this, so I tried something different. I added multiple actions for my Zappier trigger, each action with a different Google Calendar value (one event start (pretty), the other event end (pretty), and also the duration, and the event description (name)).
 
-With this change, my code did work! And also in the correct colors! As last part of this journey I also added an `if` statement for the colors green and blue, and these worked perfectly fine!
+![10](https://user-images.githubusercontent.com/27287809/198261077-972e6559-5e43-4281-b366-acb2f29d9314.png)
 
-<!-- <img src="https://user-images.githubusercontent.com/27287809/194368530-df1ba421-dbe4-4581-92c4-a739256ad168.png" width="500px"/> -->
+After I put that in, I tried to see if I could read out the data, but this was very difficult to do. Because I was not very familiar with the documentation of Adafruit IO and how that would work with reading out Feed data and such, I struggled a lot with the right way to collect my data. I tried a couple of ways to `Serial.println();` the incomming data values, but I kept getting the wrong values, or it didn't work at all.
+
+
+![9](https://user-images.githubusercontent.com/27287809/198260756-f3a2a96f-2c92-4e72-9753-49591f3fe7a4.png)
+![image](https://user-images.githubusercontent.com/27287809/198261194-2b83b919-4d60-46e3-af8d-e7434f73da42.png)
+![image](https://user-images.githubusercontent.com/27287809/198261253-293d64b9-8dde-43f6-a9b6-b9b1047735f7.png)
+
+This eventually worked, by putting in this:
+
+```
+void handleMessage(AdafruitIO_Data *data) {
+
+String dataStr = data->value();
+Serial.println(dataStr);
+
+}
+```
+
+
+Next up, I wanted to try and see if I could read out the duration, and if the duration would be > 8 hours for that day, I wanted to change the color of my LED to a certain color. I couldn't get this to work sadly...
 
